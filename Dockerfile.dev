@@ -1,0 +1,13 @@
+FROM node:16.13
+
+ENV NODE_ENV="development"
+ENV DEBUG=express-session
+WORKDIR /backend
+
+COPY ./package.json ./
+RUN npm install
+
+COPY ./ ./
+
+EXPOSE 4000/tcp
+CMD ["npm", "run", "dev"]
