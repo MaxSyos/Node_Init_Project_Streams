@@ -9,6 +9,8 @@ services:
         restart: always
         ports:
             - "4000:4000"
+        environment:
+            DATABASE_URL: "postgresql://admin:sysdba@172.18.0.1:15432/nomebanco?schema=public"
         volumes:
             - ./src:/backend/src
             - ./.docker/tmp:/backend/tmp
